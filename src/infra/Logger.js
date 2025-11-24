@@ -1,7 +1,7 @@
 class Logger {
     constructor() {
         if (Logger.instance) {
-            return Logger.instance; // Retorna a instância existente
+            return Logger.instance; 
         }
         this.logs = [];
         Logger.instance = this;

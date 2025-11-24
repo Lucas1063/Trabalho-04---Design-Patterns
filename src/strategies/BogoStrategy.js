@@ -11,11 +11,11 @@ class BogoStrategy extends PromotionStrategy {
             itemsByName[item.name].push(item.price);
         });
 
-        // Regra: A cada par, 1 é grátis
+       
         for (const name in itemsByName) {
             const prices = itemsByName[name];
             const freeItemsCount = Math.floor(prices.length / 2);
-            // Assume-se que o desconto é sobre o preço unitário (todos iguais por nome)
+        
             discount += freeItemsCount * prices[0];
         }
         

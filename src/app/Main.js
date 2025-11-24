@@ -17,7 +17,7 @@ function main() {
     const cart = new Cart();
     // Populando carrinho para teste
     cart.addItem(new Product("Camiseta", 50.00));
-    cart.addItem(new Product("Camiseta", 50.00)); // Deve ativar BOGO
+    cart.addItem(new Product("Camiseta", 50.00));
     cart.addItem(new Product("Calça", 100.00));
 
     console.log("--- Carrinho de Compras ---");
@@ -26,18 +26,18 @@ function main() {
 
     rl.question('Escolha a promoção (BOGO / NONE): ', (promoType) => {
         try {
-            // 1. Factory cria a estratégia
+            //Factory cria a estratégia
             let strategy = PromotionFactory.create(promoType);
             logger.log(`Estratégia definida: ${promoType}`);
 
             rl.question('Aplicar cupom de 10% extra? (S/N): ', (answer) => {
-                // 2. Decorator envolve a estratégia se necessário
+                //Decorator envolve a estratégia se necessário
                 if (answer.toUpperCase() === 'S') {
                     strategy = new CouponDecorator(strategy, 10);
                     logger.log("Cupom aplicado.");
                 }
 
-                // 3. Execução
+                //Execução
                 const discount = strategy.calculateDiscount(cart);
                 const finalPrice = cart.getTotal() - discount;
 

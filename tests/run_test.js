@@ -38,6 +38,6 @@ strat = new CouponDecorator(strat, 10); // +10% de 100 = 10
 
 const totalDiscount = strat.calculateDiscount(cart2);
 assert.strictEqual(totalDiscount, 10.00, "Deve aplicar apenas os 10% do cupom");
-console.log("✅ Passou.");
+console.log("Passou.");
 
-console.log("\nTodos os testes passaram! 🚀");
+console.log("\nTodos os testes passaram! ");
